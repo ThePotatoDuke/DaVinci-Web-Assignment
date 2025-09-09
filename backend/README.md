@@ -42,6 +42,7 @@ npm start
 
 ## 📂 Project Structure
 
+```bash
 backend/
 ├── src/
 │ ├── posts/ # Posts module (controller + service + DTOs)
@@ -53,6 +54,7 @@ backend/
 ├── package.json
 ├── tsconfig.json
 └── nest-cli.json
+```
 
 ## 📝 API Endpoints
 

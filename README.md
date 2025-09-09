@@ -23,7 +23,7 @@ This application allows users to:
 
 ---
 
-## Getting Started
+### Getting Started
 
 ### Backend
 

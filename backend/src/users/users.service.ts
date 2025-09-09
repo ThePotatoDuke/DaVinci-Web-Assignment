@@ -25,9 +25,9 @@ export class UsersService {
     },
     {
       id: 4,
-      name: 'Ahmet Kaya',
-      username: 'ahmetk',
-      email: 'ahmet.kaya@example.com',
+      name: 'Ahmet Arda',
+      username: 'ahmeta',
+      email: 'ahmet.arda@example.com',
     },
     {
       id: 5,

@@ -69,7 +69,7 @@ export default function Users() {
         }}
         renderItem={(user) => (
           <>
-            {user.name} ({user.username}) – {user.email}
+            {user.name} ({user.username}) – {user.email} – id: {user.id}
           </>
         )}
         onAdd={addUser}

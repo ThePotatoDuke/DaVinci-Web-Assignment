@@ -10,7 +10,7 @@ export default function Home() {
         {/* Text content */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-5xl font-extrabold mb-6 text-indigo-400">
-            Welcome to DaVinci
+            Welcome to Da Vinci
           </h1>
           <p className="text-lg text-gray-300 mb-8">
             Manage users and posts with ease. Click below to get started.

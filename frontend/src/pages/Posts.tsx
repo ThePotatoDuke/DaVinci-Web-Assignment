@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { apiDelete, apiGet, apiPost } from "../services/api";
 import { ItemList } from "../components/ItemList";
 import Pagination from "../components/Pagination";
-import type { Post } from "../types";
+import type { Post } from "../types/types";
 
 type User = {
   id: number;

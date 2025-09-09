@@ -1,17 +1,18 @@
 import { PlusCircleIcon, TrashIcon } from "@heroicons/react/16/solid";
 
 interface InputField {
-  name: string; // key of the field, e.g., "title", "name", "username"
+  name: string; // key of the field
   placeholder?: string;
-  value: string;
+  value: string | number;
+  type?: "text" | "number";
 }
 
 interface ItemListProps<T> {
   title: string;
   items: T[];
   renderItem: (item: T) => React.ReactNode;
-  inputFields: InputField[]; // multiple inputs
-  onChange: (fieldName: string, value: string) => void;
+  inputFields: InputField[];
+  onChange: (fieldName: string, value: string | number) => void;
   onAdd: () => void;
   onDelete: (id: number) => void;
 }
@@ -34,8 +35,16 @@ export function ItemList<T extends { id: number }>({
         {inputFields.map((field) => (
           <input
             key={field.name}
+            type={field.type || "text"}
             value={field.value}
-            onChange={(e) => onChange(field.name, e.target.value)}
+            onChange={(e) =>
+              onChange(
+                field.name,
+                field.type === "number"
+                  ? Number(e.target.value)
+                  : e.target.value
+              )
+            }
             placeholder={field.placeholder || `Enter ${field.name}...`}
             className="flex-1 min-w-[150px] border border-gray-700 bg-gray-800 text-white px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />

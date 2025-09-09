@@ -20,7 +20,7 @@ export default function NavBar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-gradient-to-r from-indigo-600 to-indigo-800 shadow-md w-full"
+      className="sticky top-0 z-50 bg-gradient-to-r from-indigo-600 to-indigo-800 shadow-md w-full"
     >
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
@@ -73,7 +73,7 @@ export default function NavBar() {
                 className={
                   isActive
                     ? "bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow"
-                    : "text-white text-opacity-95 hover:text-white hover:bg-white/ px-4 py-2 rounded-full transition-colors"
+                    : "text-white text-opacity-95 hover:text-white hover:bg-white/20 px-4 py-2 rounded-full transition-colors"
                 }
               >
                 {item.name}

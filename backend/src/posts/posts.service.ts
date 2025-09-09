@@ -6,6 +6,37 @@ export class PostsService {
   private posts: Post[] = [
     { userId: 1, id: 1, title: 'First post', body: 'Hello world' },
     { userId: 2, id: 2, title: 'Second post', body: 'Another post' },
+    {
+      userId: 1,
+      id: 3,
+      title: 'Learning React',
+      body: 'React with TypeScript is awesome!',
+    },
+    {
+      userId: 2,
+      id: 4,
+      title: 'Weekend plans',
+      body: 'Might go hiking or play some games.',
+    },
+    {
+      userId: 1,
+      id: 5,
+      title: 'Coding late night',
+      body: 'Debugging until 3 AM again...',
+    },
+    {
+      userId: 2,
+      id: 6,
+      title: 'Da Vinci Project',
+      body: 'Working on the Da Vinci assignment.',
+    },
+    { userId: 1, id: 7, title: 'Favorite food', body: 'Definitely pizza 🍕' },
+    {
+      userId: 2,
+      id: 8,
+      title: 'Blender fun',
+      body: 'Made a new 3D animation today!',
+    },
   ];
 
   findAll(): Post[] {

@@ -8,7 +8,7 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import type { Post as PostType } from '../types'; // <-- notice "import type"
+import type { Post as PostType } from '../types';
 import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';

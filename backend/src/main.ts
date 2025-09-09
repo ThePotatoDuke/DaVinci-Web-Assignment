@@ -6,11 +6,11 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin: 'http://localhost:5173', // your frontend dev server
+    origin: 'http://localhost:5173',
     methods: 'GET,POST,PUT,PATCH,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
   });
 
   await app.listen(3000);
 }
-bootstrap();
+void bootstrap();

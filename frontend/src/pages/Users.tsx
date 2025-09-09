@@ -12,19 +12,22 @@ interface User {
 
 export default function Users() {
   const [users, setUsers] = useState<User[]>([]);
-  const [currentUsers, setCurrentUsers] = useState<User[]>([]);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 10;
 
   // Load users
   useEffect(() => {
-    apiGet<User[]>("/users").then((data) => {
-      setUsers(data);
-      setCurrentUsers(data.slice(0, usersPerPage));
-    });
+    apiGet<User[]>("/users").then((data) => setUsers(data));
   }, []);
+
+  // Compute users to show on current page
+  const currentUsers = users.slice(
+    (currentPage - 1) * usersPerPage,
+    currentPage * usersPerPage
+  );
 
   async function addUser() {
     const newUser = await apiPost<User>("/users", { name, username, email });
@@ -33,35 +36,36 @@ export default function Users() {
     setName("");
     setUsername("");
     setEmail("");
-    setCurrentUsers(updatedUsers.slice(0, usersPerPage)); // reset to first page
+
+    // Navigate to last page
+    const totalPages = Math.ceil(updatedUsers.length / usersPerPage);
+    setCurrentPage(totalPages);
   }
 
   async function deleteUser(id: number) {
     await apiDelete(`/users/${id}`);
     const updatedUsers = users.filter((u) => u.id !== id);
     setUsers(updatedUsers);
-    setCurrentUsers(updatedUsers.slice(0, usersPerPage));
-  }
 
-  const handlePageChange = (page: number) => {
-    const start = (page - 1) * usersPerPage;
-    setCurrentUsers(users.slice(start, start + usersPerPage));
-  };
+    // Adjust page if current page is now empty
+    const totalPages = Math.ceil(updatedUsers.length / usersPerPage);
+    if (currentPage > totalPages) setCurrentPage(totalPages || 1);
+  }
 
   return (
     <>
       <ItemList<User>
         title="Users"
-        items={currentUsers} // use current page slice
+        items={currentUsers}
         inputFields={[
           { name: "name", value: name, placeholder: "Name" },
           { name: "username", value: username, placeholder: "Username" },
           { name: "email", value: email, placeholder: "Email" },
         ]}
         onChange={(fieldName, value) => {
-          if (fieldName === "name") setName(value);
-          if (fieldName === "username") setUsername(value);
-          if (fieldName === "email") setEmail(value);
+          if (fieldName === "name") setName(String(value));
+          if (fieldName === "username") setUsername(String(value));
+          if (fieldName === "email") setEmail(String(value));
         }}
         renderItem={(user) => (
           <>
@@ -72,12 +76,12 @@ export default function Users() {
         onDelete={deleteUser}
       />
 
-      {/* Pagination */}
       <div className="max-w-6xl mx-auto mt-6">
         <Pagination
-          totalPosts={users.length}
-          postsPerPage={usersPerPage}
-          onPageChange={handlePageChange}
+          totalPosts={users.length} // or posts.length
+          postsPerPage={usersPerPage} // or postsPerPage
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
         />
       </div>
     </>

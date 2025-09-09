@@ -17,6 +17,24 @@ export class UsersService {
       username: 'erdemalpay',
       email: 'erdemalpay@gmail.com',
     },
+    {
+      id: 3,
+      name: 'Ayşe Yılmaz',
+      username: 'aysey',
+      email: 'ayse.yilmaz@example.com',
+    },
+    {
+      id: 4,
+      name: 'Ahmet Kaya',
+      username: 'ahmetk',
+      email: 'ahmet.kaya@example.com',
+    },
+    {
+      id: 5,
+      name: 'Elif Demir',
+      username: 'elifd',
+      email: 'elif.demir@example.com',
+    },
   ];
 
   findAll(): User[] {

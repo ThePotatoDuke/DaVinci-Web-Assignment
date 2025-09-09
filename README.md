@@ -13,8 +13,7 @@ This application allows users to:
 
 - View, add, edit, and delete **Users**.
 - View, add, edit, and delete **Posts**.
-- See the relation between **Users** and **Posts** through `userId`.
-- Navigate with pagination and a sticky navbar.
+- See the relation between **Users** and **Posts** through `userName`.
 
 ---
 

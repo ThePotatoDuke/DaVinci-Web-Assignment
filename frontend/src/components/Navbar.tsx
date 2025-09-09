@@ -14,13 +14,7 @@ const navigation = [
   { name: "Posts", href: "/posts" },
 ];
 
-export default function NavBar({
-  currentUserId,
-  setCurrentUserId,
-}: {
-  currentUserId: number;
-  setCurrentUserId: (id: number) => void;
-}) {
+export default function NavBar() {
   const location = useLocation();
 
   return (
@@ -63,24 +57,6 @@ export default function NavBar({
                 })}
               </div>
             </div>
-          </div>
-
-          {/* Profile ID input */}
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:ml-6">
-            <label
-              htmlFor="currentUserId"
-              className="text-sm font-medium text-white mr-2 hidden sm:block"
-            >
-              Profile ID
-            </label>
-            <input
-              id="currentUserId"
-              type="number"
-              value={currentUserId}
-              onChange={(e) => setCurrentUserId(Number(e.target.value))}
-              className="w-24 px-3 py-1 rounded-md border border-indigo-300 bg-white text-indigo-700 placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
-              placeholder="ID"
-            />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { apiDelete, apiGet, apiPost } from "../services/api";
 import { ItemList } from "../components/ItemList";
-import Pagination from "../components/pagination";
+import Pagination from "../components/Pagination";
 
 interface User {
   id: number;

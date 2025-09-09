@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ItemList } from "../components/ItemList";
 import { apiDelete, apiGet, apiPost } from "../services/api";
 import type { Post } from "../types";
-import Pagination from "../components/pagination";
+import Pagination from "../components/Pagination";
 
 export default function Posts({ currentUserId }: { currentUserId: number }) {
   const [posts, setPosts] = useState<Post[]>([]);

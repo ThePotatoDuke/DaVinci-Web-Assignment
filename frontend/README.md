@@ -18,7 +18,7 @@ cd frontend
 npm install
 ```
 
-### 2. Run development server
+### 2. Run development server (for development)
 
 ```bash
 npm run dev
@@ -26,7 +26,7 @@ npm run dev
 
 Vite will start a dev server at http://localhost:5173
 
-### 3. Build for production
+### 3. Build for production (optional, for deployment)
 
 ```bash
 npm run build
@@ -34,7 +34,7 @@ npm run build
 
 The output will be in the dist/ folder.
 
-### 4. Preview production build
+### 4. Preview production build (optional)
 
 ```bash
 npm run preview
@@ -45,12 +45,12 @@ npm run preview
 ```
 frontend/
  ├── src/
+ │   ├── assets/        # images and logo
  │   ├── components/    # Reusable UI components (Navbar, ItemList, Pagination, etc.)
  │   ├── pages/         # Page-level components (Home, Users, Posts)
  │   ├── services/      # API request helpers (apiGet, apiPost, apiDelete)
  │   ├── types/         # Shared TypeScript types
  │   └── main.tsx       # App entry point
- ├── public/            # Static assets (images, favicon, etc.)
  ├── index.html
  └── vite.config.ts
 ```

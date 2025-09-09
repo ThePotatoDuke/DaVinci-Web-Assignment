@@ -75,3 +75,9 @@ backend/
 | POST   | `/posts`     | Create a new post       | `{ title, body, userId }`    | Newly created post object  |
 | PATCH  | `/posts/:id` | Update a post           | `{ title?, body?, userId? }` | Updated post object or 404 |
 | DELETE | `/posts/:id` | Delete a post by ID     | –                            | 204 No Content or 404      |
+
+## 🛠 Technologies Used
+
+Nest.js + TypeScript
+
+CORS for cross-origin requests

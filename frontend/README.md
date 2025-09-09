@@ -54,3 +54,15 @@ frontend/
  ├── index.html
  └── vite.config.ts
 ```
+
+## 🛠 Technologies Used
+
+React 18 + TypeScript
+
+Vite for fast development and build
+
+Tailwind CSS for styling
+
+React Router for routing
+
+Headless UI and Heroicons for accessible UI components

@@ -66,7 +66,7 @@ backend/
 | GET    | `/users/:id` | Get a single user by ID | –                              | User object or 404         |
 | POST   | `/users`     | Create a new user       | `{ name, username, email }`    | Newly created user object  |
 | PATCH  | `/users/:id` | Update a user           | `{ name?, username?, email? }` | Updated user object or 404 |
-| DELETE | `/users/:id` | Delete a user by ID     | –                              | 204 No Content or 404      |
+| DELETE | `/users/:id` | Delete a user by ID     | –                              | boolean      |
 
 ### Posts
 
@@ -76,7 +76,7 @@ backend/
 | GET    | `/posts/:id` | Get a single post by ID | –                            | Post object or 404         |
 | POST   | `/posts`     | Create a new post       | `{ title, body, userId }`    | Newly created post object  |
 | PATCH  | `/posts/:id` | Update a post           | `{ title?, body?, userId? }` | Updated post object or 404 |
-| DELETE | `/posts/:id` | Delete a post by ID     | –                            | 204 No Content or 404      |
+| DELETE | `/posts/:id` | Delete a post by ID     | –                            | boolean      |
 
 ## 🛠 Technologies Used
 

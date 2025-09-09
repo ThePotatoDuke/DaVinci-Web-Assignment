@@ -1,4 +1,4 @@
-const BASE_URL = "https://jsonplaceholder.typicode.com";
+const BASE_URL = "http://localhost:3000";
 
 export async function apiGet<T>(endpoint: string): Promise<T> {
   const res = await fetch(`${BASE_URL}${endpoint}`);

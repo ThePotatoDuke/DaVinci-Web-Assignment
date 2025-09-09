@@ -45,11 +45,12 @@ export class UsersService {
     Object.assign(user, update);
     return user;
   }
-  remove(id: number): void {
+  remove(id: number): boolean {
     const index = this.users.findIndex((u) => u.id === id);
     if (index === -1) {
       throw new NotFoundException(`User with ID ${id} not found`);
     }
     this.users.splice(index, 1);
+    return true;
   }
 }
